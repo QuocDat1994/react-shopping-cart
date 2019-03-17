@@ -1,0 +1,8 @@
+.product {
+  display: inline-block;
+}
+
+.product img {
+  max-width: 100%;
+  object-fit: contain;
+}
