@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 class Header extends Component {
   render() {
     return (
-      <div className={styles.header}>
-        <div className={styles.logo}>Fashion Shop</div>
+      <div className={styles.Header}>
+        <div className={styles.Logo} />
         <ul>
           <li>
             <Link to="/">Home</Link>

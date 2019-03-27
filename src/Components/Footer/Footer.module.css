@@ -1,0 +1,42 @@
+.Footer {
+  margin-top: 20px;
+  padding: 3% 50px;
+  background-color: #f5f5f5;
+  font-family: "PT Sans";
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Footer div {
+  display: inline-block;
+  flex: auto;
+}
+
+.Left_Navigator .Menu {
+  margin: auto 20px;
+}
+
+.Left_Navigator .Menu:first-of-type {
+  margin-left: 0px;
+}
+.Left_Navigator .Menu:last-of-type {
+  margin-right: 0px;
+}
+
+.Left_Navigator h1 {
+  letter-spacing: 0.5px;
+  font-size: x-small;
+  font-weight: bold;
+  text-align: start;
+}
+
+.Left_Navigator ul li {
+  letter-spacing: 0.5px;
+  font-size: xx-small;
+  text-align: start;
+  margin: 10px auto;
+}
+
+.Right_Navigator {
+  font-size: small;
+}

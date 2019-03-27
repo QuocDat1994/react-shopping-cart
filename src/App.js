@@ -4,7 +4,7 @@ import Main from "./Components/Main/Main";
 import Footer from "./Components/Footer/Footer";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import { ConfigureStore } from "./ConfigureStore";
+import { configureStore } from "./configureStore";
 import { Provider, connect } from "react-redux";
 import "./App.css";
 
@@ -62,36 +62,36 @@ const products = [
   }
 ];
 
-const store = ConfigureStore();
+const store = configureStore();
 
-class Counter extends Component {
-  render() {
-    return (
-      <div>
-        {this.props.count}
-        <button onClick={this.props.increase}>+</button>
-        <button onClick={this.props.decrease}>-</button>
-      </div>
-    );
-  }
-}
+// class Counter extends Component {
+//   render() {
+//     return (
+//       <div>
+//         {this.props.count}
+//         <button onClick={this.props.increase}>+</button>
+//         <button onClick={this.props.decrease}>-</button>
+//       </div>
+//     );
+//   }
+// }
 
-const mapStateToProps = state => {
-  console.log(state);
-  return { count: state.counter1 };
-};
+// const mapStateToProps = state => {
+//   console.log(state);
+//   return { count: state.counter1 };
+// };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    increase: () => dispatch({ type: "INCREMENT" }),
-    decrease: () => dispatch({ type: "DECREMENT" })
-  };
-};
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     increase: () => dispatch({ type: "INCREMENT" }),
+//     decrease: () => dispatch({ type: "DECREMENT" })
+//   };
+// };
 
-const CounterWrapper = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Counter);
+// const CounterWrapper = connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(Counter);
 
 class App extends Component {
   render() {
@@ -101,7 +101,7 @@ class App extends Component {
           <Router>
             <>
               <Header />
-              <CounterWrapper />
+              {/* <CounterWrapper /> */}
               <Main products={products} />
               <Footer />
             </>

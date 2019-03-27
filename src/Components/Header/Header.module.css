@@ -1,23 +1,27 @@
-.header {
+.Header {
   display: inline-block;
   width: 100vw;
-  border-bottom: 1px solid rgb(211,211,211);
+  border-bottom: 1px solid rgb(211, 211, 211);
   font-family: "Roboto";
 }
 
-.header ul {
-  display: inline-block;
+.Header ul {
   float: right;
   margin: 20px;
 }
 
-.header ul li {
+.Header ul li {
   display: inline-block;
-  margin: auto 5px; 
+  margin: auto 5px;
 }
 
-.logo {
-  font-size: x-large;
+.Logo {
+  width: 150px;
+  height: 50px;
   float: left;
-  margin: 20px;
+  margin: auto 15px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../guess_logo.svg);
 }

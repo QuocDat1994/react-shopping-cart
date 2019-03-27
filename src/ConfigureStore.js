@@ -26,17 +26,7 @@ function counter2(state = 0, action) {
 
 const counter = combineReducers({ counter1, counter2 });
 
-export function ConfigureStore() {
+export function configureStore() {
   let store = createStore(counter);
-
-  // store.subscribe(() => console.log(store.getState()));
-
-  // store.dispatch({ type: "INCREMENT" });
-  // // 1
-  // store.dispatch({ type: "INCREMENT" });
-  // // 2
-  // store.dispatch({ type: "DECREMENT" });
-  // 1
-
   return store;
 }
