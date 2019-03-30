@@ -1,3 +1,25 @@
+.SizeSelector {
+  cursor: pointer;
+  border: 1px solid #c8c8c8;
+  padding: 5px;
+}
+
+.QuantityBtn {
+  background: #00e1f5;
+  cursor: pointer;
+  border: #c8c8c8 1px solid;
+  padding: 5px 10px;
+}
+
+.QuantityInput {
+  width: 25px;
+  padding: 5px;
+  border: 1px solid #c8c8c8;
+  border-left: 0px;
+  border-right: 0px;
+  text-align: center;
+}
+
 .ProductImage {
   width: 80px;
 }

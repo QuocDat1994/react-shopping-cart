@@ -27,8 +27,7 @@ export function configureStore() {
       categories: [],
       cart: {
         cartItems: raw,
-        numItems: 5,
-        totalCost: 321321
+        numItems: 0
       },
       user: "Dat"
     },
@@ -45,6 +44,7 @@ const raw = [
       "Floral print sleeveless wide leg jumpsuit with waist tie detail",
     rating: 5,
     price: 17.9,
+    sizes: ["XS", "S"],
     images: [
       {
         url:
@@ -75,6 +75,7 @@ const raw = [
       "Polyester jumpsuit with classic, regular fit, featuring an open back with strappy details",
     rating: 5,
     price: 59,
+    sizes: ["S", "M", "L"],
     images: [
       {
         url:
@@ -96,7 +97,8 @@ const raw = [
       id: "c2",
       name: "Women"
     },
-    quantity: 1
+    quantity: 1,
+    selectedSize: "S"
   },
   {
     id: "p3",
@@ -105,6 +107,7 @@ const raw = [
       "Mesh top panel bodycon denim dress with round neckline - Slim fit",
     rating: 5,
     price: 160.9,
+    sizes: ["M", "L", "XL"],
     images: [
       {
         url:
@@ -126,6 +129,7 @@ const raw = [
       id: "c2",
       name: "Women"
     },
-    quantity: 1
+    quantity: 1,
+    selectedSize: "M"
   }
 ];

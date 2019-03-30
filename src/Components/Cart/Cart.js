@@ -36,7 +36,9 @@ class Cart extends Component {
             </tr>
             <tr>
               <td colSpan="5" />
-              <button>Checkout</button>
+              <td>
+                <button className={styles.CheckOutBtn}>Checkout</button>
+              </td>
             </tr>
           </tbody>
         </table>
