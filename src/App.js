@@ -22,10 +22,19 @@ class App extends Component {
                       description
                       rating
                       price
+                      sizes
                       images {
                         url
                         alt
                       }
+                      category {
+                        id
+                        name
+                      }
+                    }
+                    categories {
+                      id
+                      name
                     }
                   }`;
 
@@ -44,7 +53,10 @@ class App extends Component {
       mode: "cors"
     })
       .then(response => response.json())
-      .then(json => this.props.setProducts(json.data.products));
+      .then(json => {
+        this.props.setProducts(json.data.products);
+        this.props.setCategories(json.data.categories);
+      });
   }
 
   render() {
@@ -62,14 +74,19 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  products: state.products
-});
+const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({
   setProducts: products =>
-    dispatch({ type: "SET_PRODUCTS", products: products }),
-  getAllProduct: () => dispatch({ type: "GET_ALL_PRODUCTS" })
+    dispatch({
+      type: "SET_PRODUCTS",
+      products: products
+    }),
+  setCategories: categories =>
+    dispatch({
+      type: "SET_CATEGORIES",
+      categories: categories
+    })
 });
 
 export default connect(

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Header.module.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 class Header extends Component {
   render() {
@@ -12,7 +13,9 @@ class Header extends Component {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <Link id="cart" to="/cart">
+              Cart {this.props.numItems}
+            </Link>
           </li>
         </ul>
       </div>
@@ -20,4 +23,8 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = state => ({
+  numItems: state.cart.numItems
+});
+
+export default connect(mapStateToProps)(Header);

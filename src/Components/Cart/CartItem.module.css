@@ -1,0 +1,8 @@
+.ProductImage {
+  width: 80px;
+}
+
+.RemoveBtn:hover {
+  color: lightblue;
+  cursor: pointer;
+}
