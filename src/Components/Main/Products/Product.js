@@ -16,11 +16,13 @@ class Product extends Component {
   render() {
     const { id, name, price, images } = this.props.product;
     return (
-      <div key={id} className={styles.product}>
+      <div key={id} className={styles.Product}>
         <img src={images[0].url} />
         <p>{name}</p>
-        <p>{price}</p>
-        <button onClick={this.handleAddToCart}>Add to cart</button>
+        <div>
+          <p className={styles.Price}>$ {price}</p>
+          <button onClick={this.handleAddToCart}>Buy</button>
+        </div>
       </div>
     );
   }

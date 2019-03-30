@@ -9,7 +9,7 @@ import styles from "./Main.module.css";
 class Main extends Component {
   render() {
     return (
-      <div className={styles.main}>
+      <div className={styles.Main}>
         <Route exact path="/" component={ProductList} />
         <Route path="/cart" component={Cart} />
       </div>

@@ -32,7 +32,7 @@ class Cart extends Component {
             <tr className={styles.TotalCost}>
               <td colSpan="4" />
               <td>Total</td>
-              <td>{totalCost} $</td>
+              <td>$ {totalCost.toFixed(2)}</td>
             </tr>
             <tr>
               <td colSpan="5" />

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styles from "./Footer.module.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faFacebookF,
   faTwitter,

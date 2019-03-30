@@ -74,6 +74,27 @@ export default function cartReducer(state = {}, action) {
         cartItems
       };
 
+    case "CHANGE_PRODUCT_QUANTITY":
+      currentProductInCart = state.cartItems.find(
+        ({ id }) => id === action.product.id
+      );
+
+      cartItems = state.cartItems.map(({ id, quantity, ...rest }) => {
+        if (id === action.product.id) {
+          return {
+            ...action.product,
+            quantity: action.newQuantity
+          };
+        } else {
+          return { id, quantity, ...rest };
+        }
+      });
+
+      return {
+        ...state,
+        cartItems,
+        numItems: state.numItems + action.newQuantity
+      };
     default:
       return state;
   }

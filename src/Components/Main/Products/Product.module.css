@@ -1,8 +1,45 @@
-.product {
+.Product {
   display: inline-block;
+  padding: 20px;
 }
 
-.product img {
+.Product > * {
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+.Product img {
   max-width: 100%;
+  min-width: 20%;
   object-fit: contain;
+  float: left;
+  padding: 0 8px;
+  margin-bottom: 0.5em;
+}
+
+.Product p {
+  margin: 5px auto;
+}
+
+.Product .Price {
+  display: inline-block;
+  color: #969696;
+}
+
+.Product button {
+  float: right;
+  text-transform: uppercase;
+  background-color: rgba(175, 175, 175, 0.6);
+  cursor: pointer;
+  padding: 5px 10px;
+  outline: none;
+  border: 0px;
+  color: white;
+  margin: 5px auto;
+}
+
+.Product button:hover {
+  background-color: #00e1f5;
 }

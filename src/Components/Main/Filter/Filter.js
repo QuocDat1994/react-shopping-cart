@@ -3,7 +3,7 @@ import styles from "./Filter.module.css";
 
 class Filter extends Component {
   render() {
-    return <div classname={styles.filter}>This is Filter.</div>;
+    return <div className={styles.Filter}>This is Filter.</div>;
   }
 }
 

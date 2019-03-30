@@ -3,22 +3,47 @@ import { connect } from "react-redux";
 import styles from "./CartItem.module.css";
 
 class CartItem extends Component {
+  state = {
+    quantity: this.props.product.quantity
+  };
+
   constructor(props) {
     super(props);
 
-    this.handleRemove = this.handleRemove.bind(this);
-    this.handleSelect = this.handleSelect.bind(this);
+    this.handleOnRemove = this.handleOnRemove.bind(this);
+    this.handleOnSelect = this.handleOnSelect.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
   }
 
-  handleRemove() {
+  handleOnRemove() {
     debugger;
     this.props.removeFromCart(this.props.product);
   }
 
-  handleSelect() {
+  handleOnSelect() {
     const newSize = document.getElementById(this.props.product.id)
       .selectedOptions[0].text;
     this.props.changeProductSize(newSize, this.props.product);
+  }
+
+  handleOnChange(e) {
+    let newQuantity;
+
+    if (e.target.name === "Decrease") {
+      newQuantity = e.target.value--;
+    } else if (e.target.name === "Increase") {
+      newQuantity = e.target.value++;
+    } else {
+      newQuantity = e.target.value;
+    }
+
+    if (newQuantity <= 0) {
+      newQuantity = 1;
+    } else if (newQuantity > 20) {
+      newQuantity = 20;
+    }
+
+    this.props.changeProductQuantity(newQuantity, this.props.product);
   }
 
   render() {
@@ -41,23 +66,41 @@ class CartItem extends Component {
         <td>
           <select
             id={id}
-            onClick={this.handleSelect}
+            onClick={this.handleOnSelect}
             className={styles.SizeSelector}
           >
             {sizes.map(size => (
-              <option key={id} value={size} selected={size == selectedSize}>
+              <option value={size} selected={size == selectedSize}>
                 {size}
               </option>
             ))}
           </select>
         </td>
         <td>
-          <button className={styles.QuantityBtn}>-</button>
-          <input value={quantity} className={styles.QuantityInput} />
-          <button className={styles.QuantityBtn}>+</button>
+          <button
+            name="Decrease"
+            value={quantity}
+            className={styles.QuantityBtn}
+            onClick={this.handleOnChange}
+          >
+            -
+          </button>
+          <input
+            value={quantity}
+            className={styles.QuantityInput}
+            onChange={this.handleOnChange}
+          />
+          <button
+            name="Increase"
+            value={quantity}
+            className={styles.QuantityBtn}
+            onClick={this.handleOnChange}
+          >
+            +
+          </button>
         </td>
-        <td>{price} $</td>
-        <td onClick={this.handleRemove} className={styles.RemoveBtn}>
+        <td>S {price}</td>
+        <td onClick={this.handleOnRemove} className={styles.RemoveBtn}>
           X
         </td>
       </tr>
@@ -71,6 +114,12 @@ const mapDispatchToProps = dispatch => ({
     dispatch({
       type: "CHANGE_PRODUCT_SIZE",
       newSize: newSize,
+      product: product
+    }),
+  changeProductQuantity: (newQuantity, product) =>
+    dispatch({
+      type: "CHANGE_PRODUCT_QUANTITY",
+      newQuantity: newQuantity,
       product: product
     })
 });

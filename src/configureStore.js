@@ -26,7 +26,7 @@ export function configureStore() {
       products: [],
       categories: [],
       cart: {
-        cartItems: raw,
+        cartItems: [],
         numItems: 0
       },
       user: "Dat"
