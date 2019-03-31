@@ -11,6 +11,9 @@ class Main extends Component {
     return (
       <div className={styles.Main}>
         <Route exact path="/" component={ProductList} />
+        <Route path="/Men" component={ProductList} />
+        <Route path="/Women" component={ProductList} />
+        <Route path="/Accessories" component={ProductList} />
         <Route path="/cart" component={Cart} />
       </div>
     );

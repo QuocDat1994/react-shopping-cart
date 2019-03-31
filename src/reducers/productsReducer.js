@@ -33,6 +33,7 @@ export default function productsReducer(state = [], action) {
     //   .then(json => json.data.products);
     case "SET_PRODUCTS":
       return action.products;
+
     default:
       return state;
   }

@@ -3,13 +3,14 @@ import thunk from "redux-thunk";
 
 import productsReducer from "./reducers/productsReducer";
 import categoriesReducer from "./reducers/categoriesReducer";
-
+import filterReducer from "./reducers/filterReducer";
 import userReducer from "./reducers/userReducer";
 import cartReducer from "./reducers/cartReducer";
 
 const allReducers = combineReducers({
   products: productsReducer,
   categories: categoriesReducer,
+  filter: filterReducer,
   cart: cartReducer,
   user: userReducer
 });
@@ -25,6 +26,9 @@ export function configureStore() {
     {
       products: [],
       categories: [],
+      filter: {
+        sizeFilter: []
+      },
       cart: {
         cartItems: [],
         numItems: 0

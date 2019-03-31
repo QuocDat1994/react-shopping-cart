@@ -16,8 +16,13 @@ class Header extends Component {
         <div className={styles.Logo} />
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">All</Link>
           </li>
+          {this.props.categories.map(category => (
+            <li>
+              <Link to={"/" + category.name}>{category.name}</Link>
+            </li>
+          ))}
           <li>
             <Link to="/cart">
               <FontAwesomeIcon icon="shopping-cart" /> ({this.props.numItems})
@@ -30,6 +35,7 @@ class Header extends Component {
 }
 
 const mapStateToProps = state => ({
+  categories: state.categories,
   numItems: state.cart.numItems
 });
 

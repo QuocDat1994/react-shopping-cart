@@ -1,4 +1,29 @@
 .Filter {
+  font-family: "Roboto", "Courier New", Courier, monospace;
   width: 20vw;
-  background-color: aqua;
+  padding: 20px;
+}
+
+.Filter li {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  padding: 5px 0;
+}
+
+.Filter h5 {
+  padding: 10px 0;
+  margin: auto 4em;
+  font-size: 1.2rem;
+  color: #969696;
+  text-transform: uppercase;
+  font-weight: normal;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+.Filter ul {
+  padding: 10px 0;
+}
+
+.Filter li input {
+  grid-column: 4;
 }

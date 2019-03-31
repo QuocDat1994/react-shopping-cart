@@ -8,8 +8,6 @@ export default function cartReducer(state = {}, action) {
         ({ id }) => id === action.product.id
       );
 
-      let cartItems;
-
       if (currentProductInCart) {
         cartItems = state.cartItems.map(({ id, quantity, ...rest }) => {
           if (id === action.product.id) {

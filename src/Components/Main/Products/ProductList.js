@@ -6,13 +6,18 @@ import { connect } from "react-redux";
 
 class ProductList extends Component {
   render() {
+    const url = window.location.pathname;
+    const path = url.substr(url.lastIndexOf("/") + 1);
+
     return (
       <>
         <Filter />
         <div className={styles.ProductList}>
-          {this.props.products.map(product => (
-            <Product key={product.id} product={product} />
-          ))}
+          {this.props.products.map(product => {
+            if (path === "" || path === product.category.name) {
+              return <Product key={product.id} product={product} />;
+            }
+          })}
         </div>
       </>
     );
@@ -20,6 +25,7 @@ class ProductList extends Component {
 }
 
 const mapStateToProps = state => ({
+  categories: state.categories,
   products: state.products
 });
 
